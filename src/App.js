@@ -1,8 +1,23 @@
+import Header from "./components/Header";
+import Entry from "./components/Entry";
+import data from "./data";
 
 function App() {
+
+  const entryElement = data.map((entry)=>{
+    return (
+      <Entry
+        key={entry.id} 
+        {...entry}
+      />
+    )
+  })
   return (
     <>
-      <h1>This is App component</h1>
+      <Header />
+      <main className="container">
+        {entryElement}
+      </main>
     </>
   );
 }
